@@ -28,6 +28,7 @@
     owner: "{{ gogs_user }}"
     group: "{{ gogs_user }}"
   when: gogs_bin.stat.islnk is not defined
+  environment: "{{ gogs_proxy_env }}"
 
 - name: Expand Gogs.
   unarchive:
